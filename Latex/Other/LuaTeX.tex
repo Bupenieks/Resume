@@ -1,0 +1,119 @@
+% !TEX TS-program = LuaLaTeX
+% !TEX encoding = UTF-8 Unicode
+
+% If this is the first time you have run LuaTeX, open Terminal and execute the following
+% command to initialize the font cache for LuaTeX. This only needs to be done once.
+%      
+%     luaotfload-tool -t -u
+
+% If you upgraded TeXShop from an earlier version, LuaLaTeX will not be listed as a default
+% engine. 
+
+% Before typesetting this document in TeXShop, go to ~/Library/TeXShop/Engines/Inactive/luaTeX 
+% and drag LuaLaTeX.engine  to ~/Library/TeXShop/Engines. Then restart TeXShop.
+
+% Don't put spaces in the names of LuaTeX files.
+
+\documentclass{article}
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{TeX Gyre Bonum}
+\setsansfont[Ligatures=TeX,Scale=MatchLowercase]{Latin Modern Sans}
+\setmonofont[Scale=MatchLowercase]{Menlo}
+\linespread{1.1}% spread lines out a little
+\frenchspacing % remove extra space after punctuation
+\begin{document}
+\title{Using OpenType fonts in Lua\LaTeX}
+\author{Will Robertson}
+\maketitle
+
+\section{Introduction}
+
+This is an example of using the \textsf{fontspec} package in Lua\LaTeX\ (which is \LaTeX\ running on the Lua\TeX\ engine). Follow along in the source to see how it works.
+
+You're probably familiar with using pdf\LaTeX\ and selecting a few different fonts by loading a few different packages, such as \textsf{mathpazo} for Palatino and \textsf{mathptmx} for Times New Roman. Lua\LaTeX\ with the \textsf{fontspec} package allows you to use not just pre-packaged \TeX\ fonts, but almost every font installed in your computer.
+
+To start, put \verb|\usepackage{fontspec}| in the preamble of your document. At the very beginning, you'll be interested in using three main commands:
+\begin{center}
+\verb|\setmainfont|\hfil\verb|\setsansfont|\hfil\verb|\setmonofont|
+\end{center}
+These three commands specify the fonts to use for the default roman, sans serif, and typewriter (or monospaced) fonts, respectively.
+They all take the same arguments: one optional argument to specify font features and a mandatory argument for the font name. A typical example is
+\begin{verbatim}
+  \setmainfont[Numbers=OldStyle]{TeX Gyre Pagella}
+\end{verbatim}
+
+\section{Installing fonts}
+
+The first time that you run \textsf{fontspec}, a database of font names must be created based on the fonts installed in your computer. This can take several minutes, so don't worry if it seems like Lua\TeX\ has hung while compiling your document. It's only slow the first time.
+
+Lua\LaTeX\ will find fonts in the following folders:
+\begin{center}
+\verb|~/Library/Fonts|\hfil\verb|/Library/Fonts|\par
+\verb|/System/Library/Fonts|\hfil\verb|/Network/Library/Fonts|
+\end{center}
+as well as in any folders searched by \TeX, including
+\begin{center}
+\verb|~/Library/texmf/fonts/opentype/*/*|\hfil\verb|/usr/local/texlive/texmf-local/fonts/opentype/*/*|
+\end{center}
+
+Lua\LaTeX\ is able to load fonts with extensions \verb|.otf|, \verb|.ttf|, and \verb|.dfont|. Unfortunately many of the bundled fonts in Mac~OS~X 10.6 (Snow Leopard) are distributed as \verb|.ttc| fonts, which currently do not work in Lua\TeX. These include `Hoefler Text', `Cochin', `American Typewriter', and others.
+
+\section{Loading fonts}
+
+Fonts may be loaded by font name or by file name. For example, the following two commands are equivalent:
+\begin{verbatim}
+  \setmainfont{TeX Gyre Pagella}
+  \setmainfont{texgyrepagella-regular.otf}
+\end{verbatim}
+However, when you load fonts by their name (not filename), \textsf{fontspec} will attempt to automatically locate any accompanying bold and italic fonts. If you need to specify these manually, the syntax is
+\begin{verbatim}
+  \setmainfont [
+    ItalicFont     = texgyrepagella-italic.otf ,
+    BoldFont       = texgyrepagella-bold.otf ,
+    BoldItalicFont = texgyrepagella-bolditalic.otf ,
+  ] {texgyrepagella-regular.otf}
+\end{verbatim}
+See the \textsf{fontspec} documentation for further details.
+
+\section{Font features}
+
+OpenType fonts can be created with in-built font features that allow customisation in the way the font looks. For example, your font might have both lining numerals ({\addfontfeature{Numbers=Lining}0123456789}) and old-style numerals ({\addfontfeature{Numbers=OldStyle}012356789}). You would choose between these with either, respectively,
+\begin{verbatim}
+  \setmainfont[Numbers=Lining]{TeX Gyre Pagella}
+  \setmainfont[Numbers=OldStyle]{TeX Gyre Pagella}
+\end{verbatim}
+
+\TeX\ users are used to typing punctuation with keyboard symbols such as `dash dash dash'~(\verb|---|) for em-dash~(—), and straight quotes~(~\verb|` '|~) for curly ones~(~‘~’~). To get the same effects when using Lua\LaTeX\ fonts, use the following feature:
+\begin{verbatim}
+  \setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
+\end{verbatim}
+
+Unlike regular \LaTeX, you may also scale the relative sizes of the fonts as you load them. The amount of scaling can be specified either  numerical (\verb|Scale=1.1|) or \textsf{fontspec} can automatically scale a font to match either the uppercase or lowercase letters of the default font; either one of
+\begin{verbatim}
+  \setmainfont[Scale=MatchUppercase]{TeX Gyre Pagella}
+  \setmainfont[Scale=MatchLowercase]{TeX Gyre Pagella}
+\end{verbatim}
+
+All of the font features above can be combined as you like, just separate multiple features with commas:
+\begin{verbatim}
+  \setsansfont
+    [Ligatures=TeX, Scale=MatchLowercase]
+    {Latin Modern Sans}
+\end{verbatim}
+
+There are many, many font features you can choose from. See the \textsf{fontspec} documentation for a full listing.
+
+\section{Using Unicode}
+
+Lua\TeX\ fully supports Unicode input, which makes it ideal for multilingual documents. As a very brief example, consider the following:
+\begin{center}
+\fontspec{Arial Unicode MS}
+Ein Apfel am Tag den Doktor erspart\\
+ένα μήλο την ημέρα τον γιατρό τον κάνει πέρα\\
+Кто не курит и не пьёт, тот здоровеньким помрёт
+\end{center}
+Take a look at the source to this document; it looks exactly like the output; each letter can be typed directly without needing macros for the accents or letters.
+
+Multilingual typesetting can become a little more involved than just typing in the Unicode letters; it's important to adjust the hyphenation for different languages and it's often necessary to switch fonts for different scripts. But you get the idea.
+
+\end{document}

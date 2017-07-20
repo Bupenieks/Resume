@@ -1,0 +1,205 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.75in,top=0.4in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage{fontawesome}
+\usepackage{marvosym}
+
+\name{R. Benjamin Upenieks} % Your name
+\address
+%{248 Golf Course ~$\cdot$~
+ {(519)  591  9922 ~$\cdot$~   ben.upenieks@uwaterloo.ca ~$\cdot$~ \faGithub \space github.com/bupenieks ~$\cdot$~ \faExternalLink \space https://bupenieks.github.io } % Your address
+%\address{} % Your secondary addess (optional)
+%\address{} % Your phone number and email
+
+\begin{document}
+
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL STRENGTHS SECTION
+%----------------------------------------------------------------------------------------
+
+%\begin{rSection}{Technical Strengths}
+
+%\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+%Computer Languages & C, C++, Java, HTML, CSS \\ 
+%Tools & git, SVN, Vim
+%\end{tabular}
+
+%\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Experience}
+%\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+%Languages & C, C++, Java (Strong), JavaScript, Python (Experienced), HTML, CSS, Bash \LaTeX (familiar)
+%\end{tabular}
+
+\begin{rSubsection}{Ford Motor Company}{May -- September 2017}{Software Developer Co-op -- C, C++, Qt, QNX}{}
+%\setlength\itemsep{0.1em} -- vertical space between bullets
+
+\item Developed the backend for the in-vehicle touchscreen system with Qt. 
+\item Refactored and decoupled an existing monolithic code base to provide a modular and more robust interface for vehicle services to request alerts and notifications.
+\item Designed and implemented notification arbitration, queueing and suppression subsystems in highly governed environments and exposed the API to internal clients in C and C++.
+\item Wrote unit tests for notification API business logic and exception flows using Google Test \& Google Mock.
+
+\end{rSubsection}
+
+\begin{rSubsection}{Contribution to 4th-Year Engineering Design Team}{February -- April 2017}{Diaphyseal Bone Manufacturing - C++}{}
+\item Tasked with analyzing open-source C++ 3D slicing software to improve the deconstruction of SolidWorks models into functional G-Code for 3D printing
+\item Proposed a solution to increase the efficiency of printing diaphyseal bone grafts on cylindrical print beds.
+\end{rSubsection}
+
+\end{rSection}
+
+
+%------------------------------------------------
+\begin{rSection}{Projects}
+
+
+%\begin{rSubsection}{TinyHFS}{}{A UNIX-style hierarchical file storage system }{}
+
+%\item Developed and implemented
+%\end{rSubsection}
+
+
+\begin{rSubsection}{TinyHFS -- Hierarchical File Storage System}{}{Arduino -- C}{github.com/Bupenieks/TinyHFS}
+
+\item Developed and implemented a low level, navigable, bytewise hierarchical file system on an Arduino microcontroller.%with primitive UNIX-like commands
+\item Complete with full CRUD and auxiliary UNIX-like operations.
+%\item Interfaced with the onboard 24LC256 Microchip EEPROM via I\textsuperscript{2}C communication over the serial bus.
+\end{rSubsection}
+
+
+\begin{rSubsection}{BeatSync}{}{Android -- Java}{Google Play Store -- github.com/Bupenieks/BeatSync}
+\item Created an app to synchronize rowing strokes with songs from your Spotify playlists using accelerometer data.
+\item Includes auxiliary music player functionality with play/pause, track seeking, and playlist selection. 
+\end{rSubsection}
+
+
+\begin{rSubsection}{CoffeeHouse}{}{Node.js -- JavaScript -- Hack the North 2017}{github.com/Bupenieks/CoffeeHouse}
+\item Writing the backend for a lightweight, Git-style version control service to enable open-source music creation. 
+\end{rSubsection}
+
+
+\begin{rSubsection}{Scrabble}{}{Node.js, MongoDB -- JavaScript, Python}{github.com/Bupenieks/Scrabble}
+\item  Created an online two-player Scrabble clone in Node with client connection powered by MongoDB and websockets. 
+\item Equipped with a ``Best Word'' algorithm written in Python to determine optimal tile placement.
+	\end{rSubsection}
+
+
+
+\end{rSection}
+\begin{rSection}{Languages \& Tools}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{1ex}} l }
+Strong: & \hspace{1ex} C++, Qt, Node.js, JavaScript, Java, Android SDK, Git\\
+Experienced: & \hspace{1ex}  C,  Python, NumPy, Scala, MongoDB, jQuery, HTML5, CSS3, \LaTeX\\
+Familiar: & \hspace{1ex}  Swift, iOS, Django, Android NDK, Vagrant, QNX, Bash, SQL
+\end{tabular}
+
+
+\end{rSection}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{\bf University of Waterloo}, Candidate for\textbf{ \textit{Bachelor of Software Engineering}} (BSE); 2A \\
+Cumulative Average : \textbf{85.17}\% -- 1A Dean's Honour List \\
+Overloading courses with the intent of earning a \textit{\textbf{Joint Honours Degree in Statistics}}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{2ex}} l }
+Relevant Coursework : & Coursera Deep Learning Specialization
+
+\end{tabular}
+
+%\begin{tabular}{ @{} >{\bfseries}l @{\hspace{1ex}} l }
+%Languages: & C, C++, Java (Strong), JavaScript, Python (Experienced), HTML, CSS, Bash, \LaTeX (familiar)
+%\end{tabular}
+
+\end{rSection}
+
+\begin{rSection}{Awards}
+\begin{rSubSubsection}{}{}{}{}
+
+\item Recognized by the 1A term's \textbf{Dean's Honour List}
+%\item University of Waterloo \textbf{President's Scholarship of Distinction} -- 97\% high school average 
+		%\\ -- Awarded to students admitted with an admission average of 95\% or greater
+\item University of Waterloo \textbf{Engineering Entrance Scholarship} \& \textbf{President's Scholarship of Distinction} 
+%\\  -- Awarded for  academic excellence and showing potential to thrive in professional skill development
+\item \textbf{SAT} Subject Tests Math 1: 800 - Physics: 800 -  \textbf{Perfect scores}
+\item \textbf{ACT} Math: 36 - Science: 36 - \textbf{Perfect scores}; English: 34 - Reading: 34 - Writing: 11 - 99th percentile overall
+\item Trained and competed at the highest level in Canada as a soccer goalkeeper.
+
+
+
+\item \textbf{Toronto FC} \& \textbf{Ontario Provincial Soccer Team} -- Goalkeeper for Team Ontario and Toronto FC Academy  
+\end{rSubSubsection}
+
+
+
+
+
+
+
+
+\end{rSection}
+
+
+%\begin{rSection}{Clubs, Volunteer \& Community}
+%\begin{rSubSubsection}{}{}{}{}
+%\item Community Liaison for Constituency Communications; Local Member of Provincial Parliament Office 
+%\item Canvassed and campaigned for the local candidate during two elections 
+%\item Physics Club \& AP Calculus AB Club Founder; St. David Secondary School	
+%\item Academic Tutor, Mathematics and English, grades 9 - 12				
+%\item Model United Nations member; Kitchener \& SOMA participant; Toronto, Ontario\\
+%\end{rSubSubsection}
+
+
+
+%{rSection}
+
+
+
+%----------------------------------------------------------------------------------------
+%	EXAMPLE SECTION
+%----------------------------------------------------------------------------------------
+
+%\begin{rSection}{Section Name}
+
+%Section content\ldots
+
+%\end{rSection}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
