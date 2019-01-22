@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  14 JAN 2019 21:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 JAN 2019 23:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -106,11 +106,11 @@ LaTeX Font Info:    ... okay on input line 36.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(54.2025pt, 505.89pt, 54.2025pt)
-* v-part:(T,H,B)=(36.135pt, 737.15378pt, 21.68121pt)
+* v-part:(T,H,B)=(36.135pt, 751.60756pt, 7.22743pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=505.89pt
-* \textheight=737.15378pt
+* \textheight=751.60756pt
 * \oddsidemargin=-18.06749pt
 * \evensidemargin=-18.06749pt
 * \topmargin=-73.135pt
@@ -151,7 +151,7 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 36--36
 Here is how much of TeX's memory you used:
  2628 strings out of 493014
  34697 string characters out of 6133351
- 98092 words of memory out of 5000000
+ 98091 words of memory out of 5000000
  6199 multiletter control sequences out of 15000+600000
  5574 words of font info for 20 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -165,7 +165,7 @@ onts/cm/cmbxti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti10.pfb>
-Output written on cv_4.pdf (1 page, 104000 bytes).
+Output written on cv_4.pdf (1 page, 103104 bytes).
 PDF statistics:
  37 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream
